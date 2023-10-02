@@ -76,36 +76,59 @@
     .container-image {
       max-width: 100%; /* Ensure the image stays within the container */
     }
+           /* Add custom styles for navigation bar */
+           .navbar {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .navbar:hover {
+            background-color: #4CAF50; /* Change the background color on hover */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white; /* Change the text color on hover */
+        }
 </style>
 
 
 <body>
     
-<!-- THIS IS TOP-NAV-->
-<nav>
-    <div class="logo">
-        <h4>Coastal Waste Management</h4>
+  <!-- Bootstrap Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        Coastal Waste Management
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mcl.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Manage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="comment.html">Comments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="map_1.html">Maps</a>
+            </li>
+        </ul>
     </div>
-    <ul class="nav-links">
-  
-        <li><a href="#">Home</a></li>
-        <li><a href="contact.html">Contact</a></li>
-       
-        <li><a href="mcl.html">About</a></li>
-        <li><a href="login.html">Manage</a></li>
-        <li><a href="comment.html">Comments</a></li>
-        <li><a href="map_1.html">Maps</a></li>
-
-        
-    
-  
-    </ul>
-    <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-    </div>
-  </nav>
+</nav>
 <!-- Google Translate Widget -->
 <div id="google_translate_element"></div>
 <script type="text/javascript">
@@ -401,7 +424,10 @@
 <!--- END CONTAINER -->
 
 
-
+    <!-- Bootstrap and jQuery JS files (place them at the end of your body) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
