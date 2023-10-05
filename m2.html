@@ -11,163 +11,78 @@
   <title>Document</title>
 
 <style>
+ /* Common styles for all screen sizes */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Error wrapper styles */
 .error-wrapper {
-    background-color: #292929;
-    height: 100%;
-    padding-top: 10%
+    background-color: #292b2c;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
 }
 
-.error-wrapper .error-container {
-    -webkit-transform: skew(0deg, -10deg);
-    -moz-transform: skew(0deg, -10deg);
-    -o-transform: skew(0deg, -10deg);
-    -ms-transform: skew(0deg, -10deg);
-    transform: skew(0deg, -10deg);
+.error-container {
     background-color: #1dbc9c;
-    padding: 60px
-}
-
-.error-wrapper .error-container .error {
-    -webkit-transform: skew(0deg, 10deg);
-    -moz-transform: skew(0deg, 10deg);
-    -o-transform: skew(0deg, 10deg);
-    -ms-transform: skew(0deg, 10deg);
-    transform: skew(0deg, 10deg);
-    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
     text-align: center;
-    width: 350px
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.error-wrapper .error-container .error .error-title {
-    font-size: 28px;
+.error-number {
+    font-size: 50px;
     font-weight: 700;
-    letter-spacing: 5px;
-    text-transform: uppercase
+    margin-bottom: 20px;
 }
 
-.error-wrapper .error-container .error .error-number {
-    font-size: 100px;
-    font-weight: 700;
-    letter-spacing: 5px;
-    text-shadow: 0 3px 0 #292929, 0 14px 10px rgba(0, 0, 0, .15), 0 24px 2px rgba(0, 0, 0, .1), 0 34px 30px rgba(0, 0, 0, .1)
+.error-description {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 40px;
 }
 
-.error-wrapper .error-container .error .error-description {
-    font-size: 14px;
-    font-weight: 300;
-    padding: 0 40px
+.error-actions li {
+    display: inline;
+    margin: 0 10px;
 }
 
-.error-wrapper .error-container .error .error-or {
-    height: 20px;
-    margin: 30px 0 10px;
-    position: relative;
-    text-align: center
+.error-actions li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
 }
 
-.error-wrapper .error-container .error .error-or .or-line {
-    background-color: #169077;
-    height: 1px;
-    left: 40px;
-    position: absolute;
-    right: 40px;
-    top: 10px
+.error-actions li a:hover {
+    text-decoration: underline;
 }
 
-.error-wrapper .error-container .error .error-or .or {
-    -lh-property: 0;
-    left: -webkit-calc(50% - 30px);
-    left: -moz-calc(50% - 30px);
-    left: calc(50% - 30px);
-    background-color: #1dbc9c;
-    height: 20px;
-    margin: 0 auto;
-    position: absolute;
-    text-transform: uppercase;
-    top: 2px;
-    width: 60px
+/* Custom div styles */
+.custom-div {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #1dbc9c;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
 }
 
-.error-wrapper .error-container .error .error-textbox {
-    padding: 0 40px
+.custom-div img {
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
-.error-wrapper .error-container .error .error-textbox .form-control {
-    background-color: #292929;
-    border: 0
-}
-
-.error-wrapper .error-container .error .error-submit {
-    padding: 0 40px
-}
-
-.error-wrapper .error-container .error .error-submit input {
-    font-size: 13px;
-    font-weight: 300;
-    text-transform: uppercase
-}
-
-.error-wrapper .error-container .error .error-actions {
-    display: block;
-    height: 40px;
-    list-style: none;
-    padding: 5px
-}
-
-.error-wrapper .error-container .error .error-actions>li {
-    display: inline-block;
-    float: left;
-    width: 33%
-}
-
-.error-wrapper .error-container .error .error-actions>li a i {
-    color: #292929;
-    font-size: 32px
-}
-
-.error-wrapper .error-container.error-500 {
-    background-color: #ffc107
-}
-
-.error-wrapper .error-container.error-500 .error .error-or .or-line {
-    background-color: #d39e00
-}
-
-.error-wrapper .error-container.error-500 .error .error-or .or {
-    background-color: #ffc107
-}
-
-.error-wrapper .error-container.error-401 {
-    background-color: #34b5dc
-}
-
-.error-wrapper .error-container.error-401 .error .error-or .or-line {
-    background-color: #2198bd
-}
-
-.error-wrapper .error-container.error-401 .error .error-or .or {
-    background-color: #34b5dc
-}
-
-@media only screen and (max-width:600px) {
-    .error-wrapper {
-        padding-top: 5%
-    }
-    .error-wrapper .error-container {
-        -webkit-transform: skew(0deg, -5deg);
-        -moz-transform: skew(0deg, -5deg);
-        -o-transform: skew(0deg, -5deg);
-        -ms-transform: skew(0deg, -5deg);
-        transform: skew(0deg, -5deg)
-    }
-    .error-wrapper .error-container .error {
-        -webkit-transform: skew(0deg, 5deg);
-        -moz-transform: skew(0deg, 5deg);
-        -o-transform: skew(0deg, 5deg);
-        -ms-transform: skew(0deg, 5deg);
-        transform: skew(0deg, 5deg);
-        width: auto
-    }
+.custom-div p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 </style>
 
