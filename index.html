@@ -20,6 +20,21 @@
     <link rel="stylesheet" href="res.css">
 
     <title>Home</title>
+	<!-- Google Translate API Script -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,fr,de,sw', // Add the languages you want to support
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element'
+        );
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
     <style>
         /* Custom CSS for the divs */
@@ -106,21 +121,11 @@
     </nav>
 
     <!-- Google Translate Widget -->
-    <div id="google_translate_element">
-	    <!-- Google Translate Widget -->
+	<!-- Google Translate Widget Container -->
 <div id="google_translate_element"></div>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      {
-        pageLanguage: 'en',
-        includedLanguages: 'en,es,fr,de,sw', // Adding 'sw' for Swahili
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      },
-      'google_translate_element'
-    );
-  }
-</script>
+
+    <div id="google_translate_element">
+
     </div>
 
     <!-- Your content sections with Bootstrap classes -->
