@@ -13,164 +13,185 @@
 </head>
 <body>
   
-<style>.error-wrapper {
-  background-color: #292929;
-  height: 100%;
-  padding-top: 10%
+<style>/* Common styles for all screen sizes */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Set a background color for the body */
 }
 
-.error-wrapper .error-container {
-  -webkit-transform: skew(0deg, -10deg);
-  -moz-transform: skew(0deg, -10deg);
-  -o-transform: skew(0deg, -10deg);
-  -ms-transform: skew(0deg, -10deg);
-  transform: skew(0deg, -10deg);
-  background-color: #1dbc9c;
-  padding: 60px
+/* Error wrapper styles */
+.error-wrapper {
+    background-color: #292b2c;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    animation: fadeIn 0.5s ease; /* Fade-in animation for the error wrapper */
 }
 
-.error-wrapper .error-container .error {
-  -webkit-transform: skew(0deg, 10deg);
-  -moz-transform: skew(0deg, 10deg);
-  -o-transform: skew(0deg, 10deg);
-  -ms-transform: skew(0deg, 10deg);
-  transform: skew(0deg, 10deg);
-  margin: 0 auto;
-  text-align: center;
-  width: 350px
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.error-wrapper .error-container .error .error-title {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase
+.error-container {
+    background-color: #1dbc9c;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: transform 0.3s ease; /* Add a smooth scale transition */
 }
 
-.error-wrapper .error-container .error .error-number {
-  font-size: 100px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-shadow: 0 3px 0 #292929, 0 14px 10px rgba(0, 0, 0, .15), 0 24px 2px rgba(0, 0, 0, .1), 0 34px 30px rgba(0, 0, 0, .1)
+/* Add a hover effect for the error container */
+.error-container:hover {
+    transform: scale(1.05); /* Increase size on hover */
 }
 
-.error-wrapper .error-container .error .error-description {
-  font-size: 14px;
-  font-weight: 300;
-  padding: 0 40px
+.error-number {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite; /* Bounce animation for the error number */
 }
 
-.error-wrapper .error-container .error .error-or {
-  height: 20px;
-  margin: 30px 0 10px;
-  position: relative;
-  text-align: center
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
 }
 
-.error-wrapper .error-container .error .error-or .or-line {
-  background-color: #169077;
-  height: 1px;
-  left: 40px;
-  position: absolute;
-  right: 40px;
-  top: 10px
+.error-description {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards; /* Fade-in animation from bottom */
 }
 
-.error-wrapper .error-container .error .error-or .or {
-  -lh-property: 0;
-  left: -webkit-calc(50% - 30px);
-  left: -moz-calc(50% - 30px);
-  left: calc(50% - 30px);
-  background-color: #1dbc9c;
-  height: 20px;
-  margin: 0 auto;
-  position: absolute;
-  text-transform: uppercase;
-  top: 2px;
-  width: 60px
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.error-wrapper .error-container .error .error-textbox {
-  padding: 0 40px
+.error-actions li {
+    display: inline;
+    margin: 0 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Fade-in animation for error actions */
 }
 
-.error-wrapper .error-container .error .error-textbox .form-control {
-  background-color: #292929;
-  border: 0
+/* Add a delay for error actions */
+.error-actions li:nth-child(1) {
+    animation-delay: 1s;
 }
 
-.error-wrapper .error-container .error .error-submit {
-  padding: 0 40px
+.error-actions li:nth-child(2) {
+    animation-delay: 1.5s;
 }
 
-.error-wrapper .error-container .error .error-submit input {
-  font-size: 13px;
-  font-weight: 300;
-  text-transform: uppercase
+.error-actions li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
 }
 
-.error-wrapper .error-container .error .error-actions {
-  display: block;
-  height: 40px;
-  list-style: none;
-  padding: 5px
+.error-actions li a:hover {
+    text-decoration: underline;
 }
 
-.error-wrapper .error-container .error .error-actions>li {
-  display: inline-block;
-  float: left;
-  width: 33%
+/* Custom div styles */
+.custom-div {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #1dbc9c;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Fade-in animation for the custom div */
 }
 
-.error-wrapper .error-container .error .error-actions>li a i {
-  color: #292929;
-  font-size: 32px
+/* Add a delay for the custom div */
+.custom-div {
+    animation-delay: 2s;
 }
 
-.error-wrapper .error-container.error-500 {
-  background-color: #ffc107
+/* Apply hover effect to links */
+a:hover {
+    color: #ff5733; /* Change color on hover */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-.error-wrapper .error-container.error-500 .error .error-or .or-line {
-  background-color: #d39e00
+/* Apply a pulse animation to buttons */
+.btn {
+    animation: pulse 1.5s infinite; /* Pulse animation */
 }
 
-.error-wrapper .error-container.error-500 .error .error-or .or {
-  background-color: #ffc107
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
-.error-wrapper .error-container.error-401 {
-  background-color: #34b5dc
+/* Apply a rotate animation to images */
+img.rotate {
+    animation: rotate 4s linear infinite; /* Rotate animation */
 }
 
-.error-wrapper .error-container.error-401 .error .error-or .or-line {
-  background-color: #2198bd
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.error-wrapper .error-container.error-401 .error .error-or .or {
-  background-color: #34b5dc
+/* Apply a slide-in animation to custom divs */
+.custom-div {
+    animation: slide-in 1s ease-out forwards; /* Slide-in animation */
 }
 
-@media only screen and (max-width:600px) {
-  .error-wrapper {
-      padding-top: 5%
-  }
-  .error-wrapper .error-container {
-      -webkit-transform: skew(0deg, -5deg);
-      -moz-transform: skew(0deg, -5deg);
-      -o-transform: skew(0deg, -5deg);
-      -ms-transform: skew(0deg, -5deg);
-      transform: skew(0deg, -5deg)
-  }
-  .error-wrapper .error-container .error {
-      -webkit-transform: skew(0deg, 5deg);
-      -moz-transform: skew(0deg, 5deg);
-      -o-transform: skew(0deg, 5deg);
-      -ms-transform: skew(0deg, 5deg);
-      transform: skew(0deg, 5deg);
-      width: auto
-  }
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
 </style>
 <body>
   <div class="error-wrapper">
