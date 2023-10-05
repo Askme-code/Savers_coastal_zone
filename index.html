@@ -106,7 +106,22 @@
     </nav>
 
     <!-- Google Translate Widget -->
-    <div id="google_translate_element"></div>
+    <div id="google_translate_element">
+	    <!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,sw', // Adding 'sw' for Swahili
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+    </div>
 
     <!-- Your content sections with Bootstrap classes -->
     <section class="section services-section" id="services">
